@@ -1,0 +1,14 @@
+# target: dependencies
+# <tab> rule
+
+# make (without arguments) executes first rule in file
+# Ideally, one target for every object file and a target for final binary. 
+
+linked_list: linked_list.o Flow_driver.o
+	c99 -o Linked_list linked_list.o Flow_driver.o
+
+linked_list: linked_list.c
+	c99 -c linked_list.c
+
+Flow_driver.o:Flow_driver.c
+	c99 -c Flow_driver.c
